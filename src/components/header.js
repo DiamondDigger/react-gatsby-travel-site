@@ -2,12 +2,29 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from 'styled-components'
 import {FaBars} from 'react-icons/fa'
+import {menuData} from '../data/MenuData'
+import {Button} from './Button'
 
 const Header = () => {
   return (
     <Nav>
       <NavLink to="/">EXPLORIX</NavLink>
       <Bars />
+      <NavMenu>
+        {menuData.map((item, index) => (
+          <NavLink to={item.link} key={index}>
+            {item.title}
+          </NavLink>
+        ))}
+      </NavMenu>
+        <NavBtn>
+          <Button 
+            primary='true'
+            to='/trips'
+          >
+            Book a flight
+          </Button>
+        </NavBtn>
     </Nav>
   )
 }
@@ -46,5 +63,26 @@ const Bars = styled(FaBars)`
     transform: translate(-100%, 75%);
     font-size: 1.8rem;
     cursor: pointer;
+  }
+`
+
+const NavMenu = styled.div`
+  display: flex;
+  align-items: center;
+  margin-right: -48px;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+`
+
+const NavBtn = styled.div`
+  display: flex;
+  align-items: center;
+  margin-right: 24px;
+  color: #fff;
+
+  @media screen and (max-width: 768px) {
+    display: none;
   }
 `
