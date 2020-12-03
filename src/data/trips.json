@@ -1,0 +1,32 @@
+[
+    {
+        "image": "../assets/images/travel-1.jpeg",
+        "alt": "Wadi Musa, Jordan",
+        "name": "Wadi Musa, Jordan",        
+        "button": "View Destination"        
+    },
+    {
+        "image": "../assets/images/travel-2.jpeg",
+        "alt": "Wadi Musa, Jordan",
+        "name": "New York, United States",        
+        "button": "View Destination"        
+    },
+    {
+        "image": "../assets/images/travel-3.jpeg",
+        "alt": "Wadi Musa, Jordan",
+        "name": "Grainau, Germany",
+        "button": "View Destination"        
+    },
+    {
+        "image": "../assets/images/travel-4.jpeg",
+        "alt": "Wadi Musa, Jordan",
+        "name": "San Juan Bautista, Spain",        
+        "button": "View Destination"        
+    },
+    {
+        "image": "../assets/images/travel-5.jpeg",
+        "alt": "Wadi Musa, Jordan",
+        "name": "Moskenes, Norway",
+        "button": "View Destination"        
+    }
+]
