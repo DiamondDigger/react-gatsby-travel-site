@@ -1,17 +1,61 @@
 import React from 'react'
 import styled from 'styled-components'
 import {useStaticQuery, graphql} from 'gatsby'
+import Img from 'gatsby-image'
 
 const Trips = () => {
 
     const data = useStaticQuery(graphql`
-        
+        query TripsQuery {
+            allTripsJson {
+                edges {
+                  node {
+                    img
+                    button
+                    alt
+                    name
+                  }
+                }
+              }
+            allImageSharp {
+                edges {
+                  node {
+                    fluid {
+                      base64
+                      tracedSVG
+                      srcWebp
+                      srcSetWebp
+                      originalImg
+                      originalName
+                    }
+                  }
+                }
+              }
+            }
     `)
+
+    console.table(data)
+
+    function getImages({data}) {
+    const images = []
+    data.allTripsJson.edges.map((edge, index) => 
+        images.push(
+            <div key={index}>
+                <Img src={edge.node.img}
+                    fluid='fluid' />
+            </div>
+        )
+    )
+    return images
+}
+    // images.map(node => console.table(node))
 
     return (
         <ProductsContainer>
             <ProductsHeading>Heading</ProductsHeading>
-            <ProductsWrapper>Wrapper</ProductsWrapper>
+            <ProductsWrapper>Wrapper
+                {getImages(data)}
+            </ProductsWrapper>
         </ProductsContainer>
     )
 }
