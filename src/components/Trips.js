@@ -5,56 +5,44 @@ import Img from 'gatsby-image'
 
 const Trips = () => {
 
+
     const data = useStaticQuery(graphql`
-        query TripsQuery {
-            allTripsJson {
-                edges {
-                  node {
-                    img
-                    button
-                    alt
-                    name
-                  }
-                }
-              }
-            allImageSharp {
-                edges {
-                  node {
-                    fluid {
-                      base64
-                      tracedSVG
-                      srcWebp
-                      srcSetWebp
-                      originalImg
-                      originalName
-                    }
-                  }
-                }
-              }
+    query TripsQuery {
+    
+        image: file(relativePath: {eq: "travel2.jpg"}) {
+          id
+          childImageSharp {
+            fixed(
+                width: 400
+            ) {
+              ...GatsbyImageSharpFixed
             }
-    `)
-
-    console.table(data)
-
-    function getImages({data}) {
-    const images = []
-    data.allTripsJson.edges.map((edge, index) => 
-        images.push(
-            <div key={index}>
-                <Img src={edge.node.img}
-                    fluid='fluid' />
-            </div>
-        )
-    )
-    return images
-}
-    // images.map(node => console.table(node))
-
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+        `)
+        
+        console.table(data.image)
+        console.table(data.images)
+    
     return (
         <ProductsContainer>
             <ProductsHeading>Heading</ProductsHeading>
             <ProductsWrapper>Wrapper
-                {getImages(data)}
+                <Img 
+                    // fixed={data.image.childImageSharp.fixed}
+                    fluid={data.image.childImageSharp.fluid}
+                />
+                {/* {data.images.node.map((image, index) => {
+                    return (<div key={index}>
+                        <Img 
+                            fluid={image.childImageSharp.fluid}
+                        />
+                    </div>)
+                })} */}
             </ProductsWrapper>
         </ProductsContainer>
     )
@@ -76,3 +64,4 @@ const ProductsHeading = styled.div`
 `
 
 const ProductsWrapper = styled.div``
+
