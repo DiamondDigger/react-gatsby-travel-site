@@ -8,41 +8,45 @@ const Trips = () => {
 
     const data = useStaticQuery(graphql`
     query TripsQuery {
-    
-        image: file(relativePath: {eq: "travel2.jpg"}) {
-          id
-          childImageSharp {
-            fixed(
-                width: 400
-            ) {
-              ...GatsbyImageSharpFixed
-            }
-            fluid {
-              ...GatsbyImageSharpFluid
+        images: allFile(filter: {extension: {eq: "jpg"}}) {
+          edges {
+            node {
+              id
+              childImageSharp {
+                fixed {
+                    ...GatsbyImageSharpFixed
+                }
+                fluid {
+                    ...GatsbyImageSharpFluid
+                }
+              }
             }
           }
         }
       }
-        `)
-        
-        console.table(data.image)
-        console.table(data.images)
-    
+      
+    `)
+    console.table(data)
+    console.table(data.images)
+    console.table(data.images.edges)
+    data.images.edges.map(node => console.table(node))
+
     return (
         <ProductsContainer>
             <ProductsHeading>Heading</ProductsHeading>
             <ProductsWrapper>Wrapper
-                <Img 
+                {/* <Img 
                     // fixed={data.image.childImageSharp.fixed}
                     fluid={data.image.childImageSharp.fluid}
-                />
-                {/* {data.images.node.map((image, index) => {
-                    return (<div key={index}>
+                    /> */}
+                {data.images.edges.map((edge, index) => {
+                    return (
+                    <div key={index}>
                         <Img 
-                            fluid={image.childImageSharp.fluid}
+                            fluid={edge.node.childImageSharp.fluid}
                         />
                     </div>)
-                })} */}
+                })}
             </ProductsWrapper>
         </ProductsContainer>
     )
@@ -65,3 +69,19 @@ const ProductsHeading = styled.div`
 
 const ProductsWrapper = styled.div``
 
+// query TripsQuery {
+
+//     image: file(relativePath: {eq: "travel2.jpg"}) {
+//       id
+//       childImageSharp {
+//         fixed(
+//             width: 400
+//         ) {
+//           ...GatsbyImageSharpFixed
+//         }
+//         fluid {
+//           ...GatsbyImageSharpFluid
+//         }
+//       }
+//     }
+//   }
