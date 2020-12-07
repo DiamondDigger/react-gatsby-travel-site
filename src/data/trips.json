@@ -1,30 +1,30 @@
 [
     {
-        "img": "../assets/images/travel1.jpeg",
+        "image": "../assets/images/travel1.jpg",
         "alt": "Wadi Musa, Jordan",
         "name": "Wadi Musa, Jordan",        
         "button": "View Destination"        
     },
     {
-        "img": "../assets/images/travel2.jpeg",
+        "image": "../assets/images/travel2.jpg",
         "alt": "New York, United States",
         "name": "New York, United States",        
         "button": "View Destination"        
     },
     {
-        "img": "../assets/images/travel3.jpeg",
+        "image": "../assets/images/travel3.jpg",
         "alt": "Grainau, Germany",
         "name": "Grainau, Germany",
         "button": "View Destination"        
     },
     {
-        "img": "../assets/images/travel4.jpeg",
+        "image": "../assets/images/travel4.jpg",
         "alt": "San Juan Bautista, Spain",
         "name": "San Juan Bautista, Spain",        
         "button": "View Destination"        
     },
     {
-        "img": "../assets/images/travel5.jpeg",
+        "image": "../assets/images/travel5.jpg",
         "alt": "Moskenes, Norway",
         "name": "Moskenes, Norway",
         "button": "View Destination"        
