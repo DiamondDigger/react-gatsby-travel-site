@@ -19,14 +19,20 @@
     },
     {
         "image": "../assets/images/travel4.jpg",
-        "alt": "San Juan Bautista, Spain",
-        "name": "San Juan Bautista, Spain",        
+        "alt": "Tambon Khlong Sok, Thailand",
+        "name": "Tambon Khlong Sok, Thailand",        
         "button": "View Destination"        
     },
     {
         "image": "../assets/images/travel5.jpg",
         "alt": "Moskenes, Norway",
         "name": "Moskenes, Norway",
+        "button": "View Destination"        
+    },
+    {
+        "image": "../assets/images/travel6.jpg",
+        "alt": "Nawur, Afghanistan",
+        "name": "Nawur, Afghanistan",
         "button": "View Destination"        
     }
 ]
