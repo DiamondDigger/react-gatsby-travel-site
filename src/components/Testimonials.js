@@ -10,14 +10,14 @@ const Testimonials = () => {
     const data = useStaticQuery(graphql`
     query TestimonialsQuery {
         allFile(filter: {ext: {regex: "/(jpg)|(png)|(jpeg)/"}, 
-          name: {in: ["testimonial-2", "testimonial-5"]}}, 
+          name: {in: ["testimonial-2", "testimonial-3"]}}, 
           sort: {fields: name, order: DESC}) {
           edges {
             node {
               id
               childImageSharp {
                 fluid {
-                  src
+                  ...GatsbyImageSharpFluid
                 }
               }
             }
@@ -38,22 +38,34 @@ const Testimonials = () => {
             <ContentWrapper>
                 <ColumnOne>
                     <Testimonial>
-                        <IoMdCheckmarkCircleOutline />
+                        <IoMdCheckmarkCircleOutline 
+                            css={`
+                                color: lightgreen;
+                                font-size: 2rem;
+                                margin-bottom: 1rem;
+                            `}
+                        />
                         <h3>Dan Mackinski</h3>
-                        <p>'The greatest experience of my life!
+                        <p>The greatest experience of my life!
                             It was so much fun exploring the mountains
                             and they made it super easy to book
                             my trip and accommodation.
-                        '</p>
+                        </p>
                     </Testimonial>
                     <Testimonial>
-                        <FaRegLightbulb />
+                        <FaRegLightbulb 
+                            css={`
+                                color: pink;
+                                font-size: 2rem;
+                                margin-bottom: 1rem;
+                             `}
+                        />
                         <h3>Sarah Jay</h3>
-                        <p>'It was so easy to set up my trip! They 
+                        <p>It was so easy to set up my trip! They 
                             answered all my questions right away
                             and gave me the best price out of all
                             the companies researched.
-                        '</p>
+                        </p>
                     </Testimonial>
                 </ColumnOne>
                 <ColumnTwo>
@@ -74,17 +86,15 @@ export default Testimonials
 const TestimonialsContainer = styled.div`
     width: 100%;
     height: 100%;
-    background: gray;
-    color: white;
-    padding: 5rem calc((100vw - 1300) / 2)
-
+    background: #fcfcfc;
+    color: #000;
+    padding: 5rem calc((100vw - 1300) / 2);
 `
 const TopLine = styled.p`
-    color: lightskyblue;
+    color: #077bf1;
     font-size: 1rem;
     padding-left: 2rem;
     margin-bottom: 0.75rem;
-    
 `
 const Description = styled.p`
     text-align: start;
@@ -95,8 +105,10 @@ const Description = styled.p`
 `
 const ContentWrapper = styled.div`
     display: grid;
+    height: 100%;
     grid-template-columns: 1fr 1fr;
     padding: 0 2rem;
+    margin-bottom: 2rem;
 
     @media screen and (max-width: 768px){
         grid-template-columns: 1fr;
@@ -104,7 +116,7 @@ const ContentWrapper = styled.div`
 `
 const ColumnOne = styled.div`
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
 
 `
 const Testimonial = styled.div`
@@ -113,8 +125,9 @@ const Testimonial = styled.div`
 
     h3{
         margin-bottom: 1rem;
-        font-size: 1rem;
+        font-size: 1.5rem;
         font-style: italic;
+        font-weight: bold;
     }
 
     p{
@@ -134,6 +147,6 @@ const ColumnTwo = styled.div`
 `
 
 const Images = styled(Img)`
-    border-radius: 10px;
     height: 100%;
+    border-radius: 10px;
 `
