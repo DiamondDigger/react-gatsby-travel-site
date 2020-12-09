@@ -27,8 +27,8 @@ const StatsContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     padding: 4rem calc((100vw - 1300px) / 2);
-    background: gray;
-    color: white;
+    background: #fff;
+    color: #000;
 `
 const Heading = styled.h1`
     text-align: start;
@@ -60,7 +60,7 @@ const Icon = styled.div`
     font-size: 3rem;
     margin-bottom: 1rem;
 ` 
-const Title = styled.div`
+const Title = styled.p`
     font-size: clamp(1rem, 2.5vw, 1.5rem );
     margin-bottom: 0.5rem;
 ` 
