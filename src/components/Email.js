@@ -14,7 +14,17 @@ const Email = () => {
                         <label htmlFor='email'>
                         <input type='email' placeholder='Enter your email' id='email' /> 
                         </label>
-                        <Button>Sign Up</Button>
+                        <Button as='button' primary='true'
+                            css={`
+                                height: 40px;
+
+                                @media screen and (max-width: 768px){
+                                    width: 100%;
+                                    height: 45px;
+                                    min-width: 250px;
+                                }
+                            `}
+                        >Sign Up</Button>
                     </FormWrap>
                 </form>
             </EmailContent>
@@ -65,7 +75,7 @@ const EmailContent = styled.div`
     }
 `
 const FormWrap = styled.div`
-    input{
+    input{       
         width: 250px;
         height: 40px;
         border-radius: 50px;
@@ -78,11 +88,11 @@ const FormWrap = styled.div`
     @media screen and (max-width: 768px){
         display: flex;
         flex-direction: column;
-        /* padding: 0 1rem; */
-        align-items: center;
+        padding: 0 1rem;
 
         input{
             width: 100%;
+            height: 45px;
             margin-bottom: 1rem;
         }
     }

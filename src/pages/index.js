@@ -1,4 +1,5 @@
 import React from "react"
+import Email from "../components/Email"
 import Hero from "../components/Hero"
 
 import Layout from "../components/layout"
@@ -14,6 +15,7 @@ const IndexPage = () => (
     <Trips heading={'Our Favorite Destinations'}/>
     <Testimonials />
     <Stats />
+    <Email />
   </Layout>
 )
 
