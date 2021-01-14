@@ -1,9 +1,11 @@
 import React from "react"
-import { Link } from "gatsby"
-import styled from 'styled-components'
-import {FaBars} from 'react-icons/fa'
-import {menuData} from '../data/MenuData'
-import {Button} from './Button'
+import { Link } from "react-scroll"
+import styled from "styled-components"
+import { FaBars } from "react-icons/fa"
+import { menuData } from "../data/MenuData"
+import { Button } from "./Button"
+
+import { linkProps } from "./linkProps"
 
 const Header = () => {
   return (
@@ -12,19 +14,16 @@ const Header = () => {
       <Bars />
       <NavMenu>
         {menuData.map((item, index) => (
-          <NavLink to={item.link} key={index}>
+          <NavLink to={item.link} key={index} {...linkProps}>
             {item.title}
           </NavLink>
         ))}
       </NavMenu>
-        <NavBtn>
-          <Button 
-            primary='true'
-            to='/trips'
-          >
-            Book a flight
-          </Button>
-        </NavBtn>
+      <NavBtn>
+        <Button primary="true" to="/trips">
+          Book a flight
+        </Button>
+      </NavBtn>
     </Nav>
   )
 }
