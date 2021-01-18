@@ -30,20 +30,6 @@ const StatsContainer = styled.div`
   background: #fff;
   color: #000;
   overflow: hidden;
-
-  /* animation-name: slideFromBottom;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-
-  @keyframes slideFromBottom {
-    0% {
-      margin-top: 100%;
-    }
-    100% {
-      margin-top: 0;
-    }
-  } */
 `
 const Heading = styled.h1`
   text-align: start;
@@ -89,6 +75,19 @@ const Icon = styled.div`
       bottom: 0;
     }
   }
+
+  @media screen and (max-width: 768px) {
+    animation-name: slideFromDeepTop;
+
+    @keyframes slideFromDeepTop {
+      0% {
+        bottom: 800px;
+      }
+      100% {
+        bottom: 0;
+      }
+    }
+  }
 `
 const Title = styled.p`
   font-size: clamp(1rem, 2.5vw, 1.5rem);
@@ -108,6 +107,19 @@ const Title = styled.p`
       bottom: 0;
     }
   }
+
+  @media screen and (max-width: 768px) {
+    animation-name: slideFromDeepTop;
+
+    @keyframes slideFromDeepTop {
+      0% {
+        bottom: 800px;
+      }
+      100% {
+        bottom: 0;
+      }
+    }
+  }
 `
 const Info = styled.p`
   position: relative;
@@ -122,6 +134,19 @@ const Info = styled.p`
     }
     100% {
       top: 0;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    animation-name: slideFromDeepBottom;
+
+    @keyframes slideFromDeepBottom {
+      0% {
+        top: 800px;
+      }
+      100% {
+        top: 0;
+      }
     }
   }
 `

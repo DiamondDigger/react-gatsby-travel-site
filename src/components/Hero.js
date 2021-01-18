@@ -124,14 +124,14 @@ const HeroP = styled.p`
 `
 
 const ButtonWrapper = styled.div`
-  animation-name: slideFromBottom;
+  animation-name: slideFromBottomButton;
   animation-duration: 5s;
   animation-direction: alternate;
   animation-iteration-count: 3;
 
-  @keyframes slideFromBottom {
+  @keyframes slideFromBottomButton {
     from {
-      margin-top: 200%;
+      margin-top: 300%;
     }
 
     to {
