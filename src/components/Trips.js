@@ -5,7 +5,7 @@ import Img from "gatsby-image"
 import { Button } from "./Button"
 import { ImLocation } from "react-icons/im"
 
-const Trips = ({ heading }) => {
+const Trips = ({ heading, scrollAnimation }) => {
   const data = useStaticQuery(graphql`
     query TripsQuery {
       images: allTripsJson {
@@ -57,8 +57,10 @@ const Trips = ({ heading }) => {
     })
   }
 
+  console.log(scrollAnimation)
+
   return (
-    <ProductsContainer id="trips">
+    <ProductsContainer id="trips" scrollAnimation={scrollAnimation}>
       <ProductsHeading>{heading}</ProductsHeading>
       <ProductsWrapper>{getImages(data)}</ProductsWrapper>
     </ProductsContainer>
@@ -72,13 +74,13 @@ const ProductsContainer = styled.div`
   color: #fff;
   padding: 5rem calc((100vw - 1300px) / 2);
 
-  overflow: hidden;
-  animation-name: slideFromTop;
+  /* animation-name: ${({ scrollAnimation }) =>
+    scrollAnimation ? "none" : "slideFromRight"}; */
   animation-duration: 3s;
   animation-direction: alternate;
-  animation-iteration-count: 3;
+  animation-iteration-count: infinite;
 
-  @keyframes slideFromTop {
+  @keyframes slideFromRight {
     from {
       margin-left: 200%;
       width: 200%;
