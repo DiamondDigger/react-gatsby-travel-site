@@ -8,7 +8,7 @@ import Stats from "../components/Stats"
 import Testimonials from "../components/Testimonials"
 import Trips from "../components/Trips"
 
-import { animateSections } from "../data/scrollObserver"
+import { animateSections, declineAnimateSections } from "../data/scrollObserver"
 
 const IndexPage = () => {
   useEffect(() => {
@@ -18,6 +18,10 @@ const IndexPage = () => {
 
     animateSections(heroSection, tripsSection, statsSection)
     console.log("animation after useEffect()")
+
+    return () => {
+      declineAnimateSections(heroSection, tripsSection, statsSection)
+    }
   }, [])
 
   return (
