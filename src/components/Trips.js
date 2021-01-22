@@ -73,9 +73,9 @@ const ProductsContainer = styled.div`
   padding: 5rem calc((100vw - 1300px) / 2);
 
   /* animation-name: slideFromRight; */
-  animation-duration: 3s;
+  /* animation-duration: 3s;
   animation-direction: alternate;
-  animation-iteration-count: infinite;
+  animation-iteration-count: infinite; */
 
   @keyframes slideFromRight {
     from {

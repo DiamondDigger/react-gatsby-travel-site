@@ -98,8 +98,8 @@ const Description = styled.p`
   margin-bottom: 5rem;
   font-weight: bold;
 
-  animation-duration: 3s;
-  animation-name: slidein;
+  /* animation-name: slidein;
+  animation-duration: 3s; */
 
   @keyframes slidein {
     from {

@@ -62,10 +62,10 @@ const Icon = styled.div`
   margin-bottom: 1rem;
 
   position: relative;
-  animation-name: slideFrom;
+  /* animation-name: slideFrom;
   animation-duration: 2s;
   animation-iteration-count: infinite;
-  animation-direction: alternate;
+  animation-direction: alternate; */
 
   @keyframes slideFrom {
     0% {
@@ -77,7 +77,7 @@ const Icon = styled.div`
   }
 
   @media screen and (max-width: 768px) {
-    animation-name: slideFromDeepTop;
+    /* animation-name: slideFromDeepTop; */
 
     @keyframes slideFromDeepTop {
       0% {
@@ -94,10 +94,10 @@ const Title = styled.p`
   margin-bottom: 0.5rem;
 
   position: relative;
-  animation-name: slideFrom;
+  /* animation-name: slideFrom;
   animation-duration: 2s;
   animation-iteration-count: infinite;
-  animation-direction: alternate;
+  animation-direction: alternate; */
 
   @keyframes slideFrom {
     0% {
@@ -109,7 +109,7 @@ const Title = styled.p`
   }
 
   @media screen and (max-width: 768px) {
-    animation-name: slideFromDeepTop;
+    /* animation-name: slideFromDeepTop; */
 
     @keyframes slideFromDeepTop {
       0% {
@@ -122,11 +122,11 @@ const Title = styled.p`
   }
 `
 const Info = styled.p`
-  position: relative;
+  /* position: relative;
   animation-name: slideFromBottom;
   animation-duration: 2s;
   animation-iteration-count: infinite;
-  animation-direction: alternate;
+  animation-direction: alternate; */
 
   @keyframes slideFromBottom {
     0% {
@@ -138,7 +138,7 @@ const Info = styled.p`
   }
 
   @media screen and (max-width: 768px) {
-    animation-name: slideFromDeepBottom;
+    /* animation-name: slideFromDeepBottom; */
 
     @keyframes slideFromDeepBottom {
       0% {

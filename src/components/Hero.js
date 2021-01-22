@@ -110,8 +110,8 @@ const HeroH1 = styled.h1`
   padding: 0 1rem;
   letter-spacing: 3px;
 
-  animation-name: slideFromRight;
-  animation-duration: 3s;
+  /* animation-name: slideFromRight;
+  animation-duration: 3s; */
 `
 
 const HeroP = styled.p`
@@ -119,15 +119,15 @@ const HeroP = styled.p`
   font-weight: 400;
   margin-bottom: 2rem;
 
-  animation-name: slideFromRight;
-  animation-duration: 5s;
+  /* animation-name: slideFromRight;
+  animation-duration: 5s; */
 `
 
 const ButtonWrapper = styled.div`
-  animation-name: slideFromBottomButton;
+  /* animation-name: slideFromBottomButton;
   animation-duration: 5s;
   animation-direction: alternate;
-  animation-iteration-count: 3;
+  animation-iteration-count: 3; */
 
   @keyframes slideFromBottomButton {
     from {
