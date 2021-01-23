@@ -38,4 +38,41 @@ export const GlobalStyle = createGlobalStyle`
             transform: translate(0px, 0px)
         }
     }
+
+    //for Hero section 
+
+    @keyframes slideFromBottomButton {
+        from {
+            margin-top: 300%;
+        }
+        to {
+            margin-top: 0;
+        }
+    }
+
+    @keyframes slideFromRight {
+        from {
+            margin-left: 300%;
+            width: 300%;
+        }
+        to {
+            margin-left: 0;
+            width: 100%;
+        }
+  }
+
+  //actions
+  //h1
+    animation-name: slideFromRight;
+    animation-duration: 3s;
+
+  //p
+    animation-name: slideFromRight;
+    animation-duration: 5s;
+
+  //div for button
+    animation-name: slideFromBottomButton;
+    animation-duration: 5s;
+    animation-direction: alternate;
+    animation-iteration-count: 3;
 `

@@ -16,6 +16,9 @@ const IndexPage = () => {
     const tripsSection = document.querySelector("#trips")
     const statsSection = document.querySelector("#stats")
 
+    const heroP = heroSection.querySelector("p")
+    const heroButton = heroSection.querySelector("#button")
+
     animateSections(heroSection, tripsSection, statsSection)
     console.log("animation after useEffect()")
 
