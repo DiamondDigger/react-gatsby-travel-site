@@ -97,21 +97,6 @@ const Description = styled.p`
   padding-left: 2rem;
   margin-bottom: 5rem;
   font-weight: bold;
-
-  /* animation-name: slidein;
-  animation-duration: 3s; */
-
-  @keyframes slidein {
-    from {
-      margin-left: 300%;
-      width: 300%;
-    }
-
-    to {
-      margin-left: 0%;
-      width: 100%;
-    }
-  }
 `
 const ContentWrapper = styled.div`
   display: grid;

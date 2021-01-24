@@ -21,11 +21,11 @@ export const GlobalStyle = createGlobalStyle`
     @keyframes topAndBottomSlide {
         from{
             opacity: 0;
-            transform: translateY(-500px)
+            transform: translateX(-300px)
         }
         to{
             opacity: 1;
-            transform: translateY(0px)
+            transform: translateX(0px)
         }
     }
     @keyframes combineSlide {
@@ -38,8 +38,16 @@ export const GlobalStyle = createGlobalStyle`
             transform: translate(0px, 0px)
         }
     }
-
-    //for Hero section 
+    @keyframes combineSlideOtherSide {
+        from{
+            opacity: 0;
+            transform: translate(300px, 200px)
+        }
+        to{
+            opacity: 1;
+            transform: translate(0px, 0px)
+        }
+    }
 
     @keyframes slideFromBottomButton {
         from {
@@ -60,19 +68,4 @@ export const GlobalStyle = createGlobalStyle`
             width: 100%;
         }
   }
-
-  //actions
-  //h1
-    animation-name: slideFromRight;
-    animation-duration: 3s;
-
-  //p
-    animation-name: slideFromRight;
-    animation-duration: 5s;
-
-  //div for button
-    animation-name: slideFromBottomButton;
-    animation-duration: 5s;
-    animation-direction: alternate;
-    animation-iteration-count: 3;
 `

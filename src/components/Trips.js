@@ -34,7 +34,7 @@ const Trips = ({ heading }) => {
   function getImages(data) {
     return data.images.edges.map((item, index) => {
       return (
-        <ProductCard key={index}>
+        <ProductCard key={index} id="card">
           <ProductImage
             fluid={item.node.image.childImageSharp.fluid}
             alt={item.node.alt}
@@ -58,7 +58,7 @@ const Trips = ({ heading }) => {
   }
 
   return (
-    <ProductsContainer id="trips" clasName="section">
+    <ProductsContainer id="trips">
       <ProductsHeading>{heading}</ProductsHeading>
       <ProductsWrapper>{getImages(data)}</ProductsWrapper>
     </ProductsContainer>
@@ -71,22 +71,6 @@ const ProductsContainer = styled.div`
   min-height: 100vh;
   color: #fff;
   padding: 5rem calc((100vw - 1300px) / 2);
-
-  /* animation-name: slideFromRight; */
-  /* animation-duration: 3s;
-  animation-direction: alternate;
-  animation-iteration-count: infinite; */
-
-  @keyframes slideFromRight {
-    from {
-      margin-left: 200%;
-      width: 200%;
-    }
-    to {
-      margin-left: 0;
-      width: 100%;
-    }
-  }
 `
 
 const ProductsHeading = styled.div`

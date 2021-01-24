@@ -11,9 +11,9 @@ const Hero = () => {
       </HeroBg>
       <HeroContent>
         <HeroItems>
-          <HeroH1>Unreal Destinations</HeroH1>
-          <HeroP>Out of this world</HeroP>
-          <ButtonWrapper>
+          <HeroH1 data-duration="2s">Unreal Destinations</HeroH1>
+          <HeroP data-duration="1.5s">Out of this world</HeroP>
+          <ButtonWrapper id="button" data-duration="1s">
             <Button to="/trips" primary="true" big="true" id="hero-button">
               Travel Now
             </Button>
@@ -78,17 +78,6 @@ const HeroContent = styled.div`
   height: calc(100vh - 80px);
   max-height: 100%;
   padding: 0rem calc((100vw - 1300px) / 2);
-
-  @keyframes slideFromRight {
-    from {
-      margin-left: 300%;
-      width: 300%;
-    }
-    to {
-      margin-left: 0;
-      width: 100%;
-    }
-  }
 `
 
 const HeroItems = styled.div`
@@ -109,33 +98,12 @@ const HeroH1 = styled.h1`
   margin-bottom: 1.5rem;
   padding: 0 1rem;
   letter-spacing: 3px;
-
-  /* animation-name: slideFromRight;
-  animation-duration: 3s; */
 `
 
 const HeroP = styled.p`
   font-size: clamp(1rem, 3vw, 3rem);
   font-weight: 400;
   margin-bottom: 2rem;
-
-  /* animation-name: slideFromRight;
-  animation-duration: 5s; */
 `
 
-const ButtonWrapper = styled.div`
-  /* animation-name: slideFromBottomButton;
-  animation-duration: 5s;
-  animation-direction: alternate;
-  animation-iteration-count: 3; */
-
-  @keyframes slideFromBottomButton {
-    from {
-      margin-top: 300%;
-    }
-
-    to {
-      margin-top: 0;
-    }
-  }
-`
+const ButtonWrapper = styled.div``
