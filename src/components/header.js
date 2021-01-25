@@ -7,11 +7,16 @@ import { Button } from "./Button"
 
 import { linkProps } from "./linkProps"
 
-const Header = () => {
+const Header = ({ onClick }) => {
   return (
     <Nav>
       <NavLink to="/">EXPLORIX</NavLink>
-      <Bars />
+      <Bars
+        onClick={() => {
+          console.log("toggle the button")
+          onClick()
+        }}
+      />
       <NavMenu>
         {menuData.map((item, index) => (
           <NavLink to={item.link} key={index} {...linkProps}>

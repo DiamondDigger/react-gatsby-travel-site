@@ -1,14 +1,15 @@
 import React from "react"
 import Footer from "./Footer"
 import Header from "./Header"
-import {GlobalStyle} from './styles/GlobalStyles'
+import Sidebar from "./Sidebar"
+import { GlobalStyle } from "./styles/GlobalStyles"
 
-const Layout = ({ children }) => {
-
+const Layout = ({ children, isOpen, onClick }) => {
   return (
     <>
       <GlobalStyle />
-      <Header />
+      <Header onClick={onClick} />
+      <Sidebar isOpen={isOpen} onClick={onClick} />
       <main>{children}</main>
       <Footer />
     </>

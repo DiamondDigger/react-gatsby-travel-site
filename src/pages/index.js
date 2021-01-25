@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useState, useEffect } from "react"
 import Email from "../components/Email"
 import Hero from "../components/Hero"
 
@@ -16,6 +16,13 @@ import {
 } from "../data/scrollObserver"
 
 const IndexPage = () => {
+  const [isOpen, setIsOpen] = useState(false)
+
+  const onClick = () => {
+    setIsOpen(!isOpen)
+    console.log("isOpen", isOpen)
+  }
+
   useEffect(() => {
     const heroSection = document.querySelector("#hero")
     const tripsSection = document.querySelector("#trips")
@@ -51,7 +58,7 @@ const IndexPage = () => {
   }, [])
 
   return (
-    <Layout>
+    <Layout isOpen={isOpen} onClick={onClick}>
       <SEO title="Home" />
       <Hero />
       <Trips heading={"Our Favorite Destinations"} />
