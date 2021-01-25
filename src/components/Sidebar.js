@@ -3,7 +3,6 @@ import styled from "styled-components"
 import { Link } from "react-scroll"
 import { Button } from "./Button"
 import { AiOutlineClose } from "react-icons/ai"
-import { FaBars } from "react-icons/fa"
 
 import { linkProps } from "./linkProps"
 
