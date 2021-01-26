@@ -10,6 +10,7 @@ const HeaderArrow = () => {
         <Link>
           <FaArrowCircleUp
             onClick={() => {
+              scrollToHeader()
               console.log("right to the top")
             }}
           />
