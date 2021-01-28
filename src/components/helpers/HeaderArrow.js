@@ -5,7 +5,7 @@ import { scrollToHeader } from "./scrollToHeader"
 
 const HeaderArrow = () => {
   return (
-    <Container>
+    <Container id="arrow">
       <Link>
         <FaArrowCircleUp
           onClick={() => {
@@ -38,5 +38,6 @@ export const Link = styled.div`
   font-size: 7vh;
   opacity: 0.7;
   color: #f5580a;
+  cursor: pointer;
   transition: 0.3s ease-in;
 `
