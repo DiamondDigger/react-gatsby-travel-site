@@ -42,5 +42,17 @@ module.exports = {
         path: `./src/data/`,
       },
     },
+    {
+      resolve: "gatsby-source-graphql",
+      options: {
+        // Arbitrary name for the remote schema Query type
+        typeName: "GCMS",
+        // Field under which the remote schema will be accessible. You'll use this in your Gatsby query
+        fieldName: "gcms",
+        // Url to query from
+        url:
+          "https://api-eu-central-1.graphcms.com/v2/ckkbiwrvc3fip01z05qph8ctc/master",
+      },
+    },
   ],
 }
