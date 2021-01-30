@@ -1,7 +1,7 @@
 import React from "react"
 import Footer from "./Footer"
 import Header from "./Header"
-import HeaderArrow from "./HeaderArrow"
+import HeaderArrow from "./helpers/HeaderArrow"
 import Sidebar from "./Sidebar"
 import { GlobalStyle } from "./styles/GlobalStyles"
 

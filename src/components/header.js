@@ -5,7 +5,7 @@ import { FaBars } from "react-icons/fa"
 import { menuData } from "../data/MenuData"
 import { Button } from "./Button"
 
-import { linkProps } from "./linkProps"
+import { linkProps } from "./helpers/linkProps"
 
 const Header = ({ onClick }) => {
   return (
@@ -25,7 +25,7 @@ const Header = ({ onClick }) => {
         ))}
       </NavMenu>
       <NavBtn>
-        <Button primary="true" to="/trips">
+        <Button primary="true" to="/page-2">
           Book a flight
         </Button>
       </NavBtn>
