@@ -4,7 +4,7 @@ import { Link } from "react-scroll"
 import { Button } from "./Button"
 import { AiOutlineClose } from "react-icons/ai"
 
-import { linkProps } from "./linkProps"
+import { linkProps } from "./helpers/linkProps"
 
 const Sidebar = ({ isOpen, onClick }) => {
   return (
@@ -30,7 +30,7 @@ const Sidebar = ({ isOpen, onClick }) => {
       </Middle>
       <Bottom>
         <ButtonWrapper>
-          <Button to="" big="true" primary="true">
+          <Button to="/page-2/" big="true" primary="true">
             Book a flight
           </Button>
         </ButtonWrapper>
