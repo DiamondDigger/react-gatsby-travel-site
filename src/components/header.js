@@ -7,29 +7,33 @@ import { Button } from "./Button"
 
 import { linkProps } from "./helpers/linkProps"
 
-const Header = ({ onClick }) => {
+const Header = ({ onClick, visible }) => {
   return (
-    <Nav>
-      <NavLink to="/">EXPLORIX</NavLink>
-      <Bars
-        onClick={() => {
-          console.log("toggle the button")
-          onClick()
-        }}
-      />
-      <NavMenu>
-        {menuData.map((item, index) => (
-          <NavLink to={item.link} key={index} {...linkProps}>
-            {item.title}
-          </NavLink>
-        ))}
-      </NavMenu>
-      <NavBtn>
-        <Button primary="true" to="/page-2">
-          Book a flight
-        </Button>
-      </NavBtn>
-    </Nav>
+    <>
+      {visible ? (
+        <Nav>
+          <NavLink to="/">EXPLORIX</NavLink>
+          <Bars
+            onClick={() => {
+              console.log("toggle the button")
+              onClick()
+            }}
+          />
+          <NavMenu>
+            {menuData.map((item, index) => (
+              <NavLink to={item.link} key={index} {...linkProps}>
+                {item.title}
+              </NavLink>
+            ))}
+          </NavMenu>
+          <NavBtn>
+            <Button primary="true" to="/page-2">
+              Book a flight
+            </Button>
+          </NavBtn>
+        </Nav>
+      ) : null}
+    </>
   )
 }
 
