@@ -1,0 +1,32 @@
+[
+    {
+        "image": "../assets/images/trips/jordan-1.jpg",
+        "alt": "Wadi Musa, Jordan",
+        "name": "Wadi Musa, Jordan"           
+    },
+    {
+        "image": "../assets/images/trips/usa-1.jpg",
+        "alt": "New York, United States",
+        "name": "New York, United States"      
+    },
+    {
+        "image": "../assets/images/trips/germany-1.jpg",
+        "alt": "Grainau, Germany",
+        "name": "Grainau, Germany"        
+    },
+    {
+        "image": "../assets/images/trips/tailind-1.jpg",
+        "alt": "Tambon Khlong Sok, Thailand",
+        "name": "Tambon Khlong Sok, Thailand"               
+    },
+    {
+        "image": "../assets/images/trips/norway-1.jpg",
+        "alt": "Moskenes, Norway",
+        "name": "Moskenes, Norway"        
+    },
+    {
+        "image": "../assets/images/trips/afghanistan-1.jpg",
+        "alt": "Nawur, Afghanistan",
+        "name": "Nawur, Afghanistan"        
+    }
+]
