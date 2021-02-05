@@ -3,6 +3,7 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet"
 import { useDestinations } from "./helpers/useDestinations"
 import L from "leaflet"
 import "leaflet/dist/leaflet.css"
+import styled from "styled-components"
 
 const MapAndTrips = () => {
   const { destinations } = useDestinations()
@@ -33,7 +34,7 @@ const MapAndTrips = () => {
             icon={customLeafletIcon ? customLeafletIcon : null}
           >
             <Popup id={id}>
-              {name}
+              <Title>{name}</Title>
               <br />
               <a href="https://google.com">View info</a>
             </Popup>
@@ -45,3 +46,9 @@ const MapAndTrips = () => {
 }
 
 export default MapAndTrips
+
+export const Title = styled.div`
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+`
