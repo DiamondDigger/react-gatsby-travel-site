@@ -58,8 +58,18 @@ export const TextWrapper = styled.div`
   background: pink;
 `
 export const Image = styled(Img)`
-  height: 90%;
-  width: 90%;
+  height: 70%;
+  width: 70%;
   margin: auto;
-  border-radius: 10px;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: 1s ease-in-out;
+
+  :hover {
+    transform: scale(1.5, 1.5);
+    transition: 0.5s ease-in-out;
+    z-index: 1;
+    position: relative;
+    top: 50px;
+  }
 `
