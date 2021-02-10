@@ -4,11 +4,11 @@ function GeoLocation {
         const longitude = position.coords.longitude
     }
     const error = () => {
-        console.log('Geo location is not supported')
-        alert('Geo location is not supported')
+        console.log('Geo location is not allowed')
+        alert('Geo location is not allowed')
     }
 
     navigator.geolocation 
-    ? stub
-    : stub
+    ? navigator.getCurrentPosition(success(), error())
+    : alert('Your browser is not supported geo location API')
 }
