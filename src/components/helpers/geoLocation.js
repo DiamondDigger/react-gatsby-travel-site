@@ -1,14 +1,19 @@
-function GeoLocation {
-    const success = (position) => {
-        const latitude = position.coords.latitude
-        const longitude = position.coords.longitude
-    }
-    const error = () => {
-        console.log('Geo location is not allowed')
-        alert('Geo location is not allowed')
-    }
+export default function geoLocation() {
+  const onSuccess = position => {
+    const { longitude, latitude } = position.coords
 
-    navigator.geolocation 
-    ? navigator.getCurrentPosition(success(), error())
-    : alert('Your browser is not supported geo location API')
+    console.log(position)
+    console.log("longitude", longitude)
+    console.log("latitude", latitude)
+
+    return { longitude, latitude }
+  }
+  const onError = error => {
+    console.log("Geo location is not allowed", error)
+    alert("Geo location is not allowed")
+  }
+
+  navigator.geolocation
+    ? navigator.geolocation.getCurrentPosition(onSuccess, onError)
+    : alert("Your browser is not supported geo location API")
 }

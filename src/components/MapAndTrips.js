@@ -5,6 +5,8 @@ import L from "leaflet"
 import "leaflet/dist/leaflet.css"
 import styled from "styled-components"
 
+import geoLocation from "./helpers/geoLocation"
+
 const MapAndTrips = () => {
   const { destinations } = useDestinations()
   destinations.forEach(elem => console.log(elem))
@@ -15,6 +17,18 @@ const MapAndTrips = () => {
     iconAnchor: [13, 25],
     popupAnchor: [10, -30],
   })
+
+  let userIcon = L.icon({
+    iconUrl: require("../assets/images/userIcon.png"),
+    iconSize: [40, 40],
+    iconAnchor: [13, 25],
+    popupAnchor: [10, -30],
+  })
+
+  const userPosition = geoLocation()
+  // if (userPosition !== null) {
+  //   const { longitude, latitude } = userPosition
+  // }
 
   return (
     <MapContainer center={[35, 24]} zoom={2} scrollWheelZoom={true}>
@@ -37,10 +51,26 @@ const MapAndTrips = () => {
               <Title>{name}</Title>
               <br />
               <a href="https://google.com">View info</a>
+              <br />
+              <button onClick={geoLocation}>Show my location</button>
             </Popup>
           </Marker>
         )
       })}
+      {userPosition && (
+        <Marker
+          key={11}
+          position={[53.87, 27.51]}
+          // position={(longitude, latitude)}
+          icon={userIcon ? userIcon : null}
+        >
+          <Popup id={11}>
+            <Title>Your position</Title>
+            <br />
+            <a href="https://google.com">View info</a>
+          </Popup>
+        </Marker>
+      )}
     </MapContainer>
   )
 }
