@@ -25,10 +25,10 @@ const MapAndTrips = () => {
     popupAnchor: [10, -30],
   })
 
-  const userPosition = geoLocation()
-  // if (userPosition !== null) {
-  //   const { longitude, latitude } = userPosition
-  // }
+  let userPosition = {}
+  userPosition = geoLocation()
+  console.log("userPosition", userPosition)
+  console.log("geoLocation", geoLocation)
 
   return (
     <MapContainer center={[35, 24]} zoom={2} scrollWheelZoom={true}>
@@ -57,20 +57,18 @@ const MapAndTrips = () => {
           </Marker>
         )
       })}
-      {userPosition && (
-        <Marker
-          key={11}
-          position={[53.87, 27.51]}
-          // position={(longitude, latitude)}
-          icon={userIcon ? userIcon : null}
-        >
-          <Popup id={11}>
-            <Title>Your position</Title>
-            <br />
-            <a href="https://google.com">View info</a>
-          </Popup>
-        </Marker>
-      )}
+      <Marker
+        key={11}
+        position={[53.87, 27.51]}
+        // position={(longitude, latitude)}
+        icon={userIcon ? userIcon : null}
+      >
+        <Popup id={11}>
+          <Title>Your position</Title>
+          <br />
+          <a href="https://google.com">View info</a>
+        </Popup>
+      </Marker>
     </MapContainer>
   )
 }
