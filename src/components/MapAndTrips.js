@@ -5,11 +5,13 @@ import L from "leaflet"
 import "leaflet/dist/leaflet.css"
 import styled from "styled-components"
 
-import geoLocation from "./helpers/geoLocation"
+import { useGeoLocation } from "./helpers/useGeoLocation"
 
 const MapAndTrips = () => {
   const { destinations } = useDestinations()
   destinations.forEach(elem => console.log(elem))
+
+  const { location, error } = useGeoLocation()
 
   let customLeafletIcon = L.icon({
     iconUrl: require("../assets/images/iconWithCircle.png"),
@@ -19,16 +21,11 @@ const MapAndTrips = () => {
   })
 
   let userIcon = L.icon({
-    iconUrl: require("../assets/images/userIcon.png"),
+    iconUrl: require("../assets/images/userIcon3.png"),
     iconSize: [40, 40],
     iconAnchor: [13, 25],
     popupAnchor: [10, -30],
   })
-
-  let userPosition = {}
-  userPosition = geoLocation()
-  console.log("userPosition", userPosition)
-  console.log("geoLocation", geoLocation)
 
   return (
     <MapContainer center={[35, 24]} zoom={2} scrollWheelZoom={true}>
@@ -52,23 +49,27 @@ const MapAndTrips = () => {
               <br />
               <a href="https://google.com">View info</a>
               <br />
-              <button onClick={geoLocation}>Show my location</button>
+              {/* <button onClick={geoLocation}>Show my location</button> */}
             </Popup>
           </Marker>
         )
       })}
-      <Marker
-        key={11}
-        position={[53.87, 27.51]}
-        // position={(longitude, latitude)}
-        icon={userIcon ? userIcon : null}
-      >
-        <Popup id={11}>
-          <Title>Your position</Title>
-          <br />
-          <a href="https://google.com">View info</a>
-        </Popup>
-      </Marker>
+      {location ? (
+        <Marker
+          key={11}
+          position={[53.87, 27.51]}
+          // position={(location.longitude, location.latitude)}
+          icon={userIcon ? userIcon : null}
+        >
+          <Popup id={11}>
+            <Title>Your position</Title>
+            <br />
+            <a href="https://google.com">View info</a>
+          </Popup>
+        </Marker>
+      ) : (
+        (console.log("Loading.."), error && console.log(error.message))
+      )}
     </MapContainer>
   )
 }
