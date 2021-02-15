@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet"
 import { useDestinations } from "./helpers/useDestinations"
 import L from "leaflet"
@@ -12,6 +12,14 @@ const MapAndTrips = () => {
   destinations.forEach(elem => console.log(elem))
 
   const { location, error } = useGeoLocation()
+  const [userLocation, setUserLocation] = useState()
+
+  console.log("location: ", location)
+  console.log("userLocation: ", userLocation)
+
+  useEffect(() => {
+    location && setUserLocation(location)
+  }, [location])
 
   let customLeafletIcon = L.icon({
     iconUrl: require("../assets/images/iconWithCircle.png"),
@@ -48,23 +56,21 @@ const MapAndTrips = () => {
               <Title>{name}</Title>
               <br />
               <a href="https://google.com">View info</a>
-              <br />
-              {/* <button onClick={geoLocation}>Show my location</button> */}
             </Popup>
           </Marker>
         )
       })}
-      {location ? (
+      {userLocation !== undefined ? (
         <Marker
           key={11}
-          position={[53.87, 27.51]}
-          // position={(location.longitude, location.latitude)}
+          position={[userLocation.latitude, userLocation.longitude]}
           icon={userIcon ? userIcon : null}
         >
           <Popup id={11}>
-            <Title>Your position</Title>
+            <Title>Your current position</Title>
             <br />
-            <a href="https://google.com">View info</a>
+            <h4>Latitude: {userLocation.latitude.toFixed(2)}</h4>
+            <h4>Longitude: {userLocation.longitude.toFixed(2)}</h4>
           </Popup>
         </Marker>
       ) : (
